@@ -1,9 +1,8 @@
 class Route
-  attr_accessor :begin_st, :final_st, :stations
-  def initialize(begin_st, final_st)
-    @begin_st = begin_st
-    @final_st = final_st  
-    @stations = [begin_st, final_st]
+  attr_accessor :stations
+
+  def initialize(first_station, final_station)
+    @stations = [first_station, final_station]
   end
     
   def station_add(station)
@@ -11,10 +10,9 @@ class Route
   end
 
   def station_delete(station)
+    if station != @stations.first && station != @stations.last
     @stations.delete(station)
-  end
-
-  def station_return
-    return @stations
+    end
   end
 end
+
