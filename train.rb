@@ -43,7 +43,7 @@ class Train
   end
 
   def station_return
-    return "#{@route.stations[@route.stations.index(@station) - 1].name_station}, #{@station.name_station}, #{@route.stations[@route.stations.index(@station) + 1].name_station}"
+    "#{@route.stations[@route.stations.index(@station) - 1].name_station}, #{@station.name_station}, #{@route.stations[@route.stations.index(@station) + 1].name_station}"
   end
 end
 
